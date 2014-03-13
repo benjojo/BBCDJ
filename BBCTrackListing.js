@@ -7,7 +7,6 @@ else
 	var AS = "http://www.bbc.co.uk/programmes/b03865ns";
 
 page.onConsoleMessage = function(msg) {
-//    if(msg.substring(0,1) === "[")
       console.log(msg);
 };
 
@@ -19,10 +18,7 @@ var A = [];
 
 page.open(AS, function(status) {
     if ( status === "success" ) {
-        //console.log(status);
-        //page.includeJs("http://localhost/jquery.min.js", function() {
             page.evaluate(function() {
-                //console.log("boop");
 		var TNames = document.querySelectorAll("#segments .artist , #segments  .artist,#segments  .artist,#segments  .title,#segments  .artist");
 		var L = TNames.length;
 		var A = [];
@@ -33,7 +29,6 @@ page.open(AS, function(status) {
                 console.log(JSON.stringify(A));
             });
             phantom.exit();
-        //});
     }
 });
 

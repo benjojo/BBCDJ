@@ -8,7 +8,6 @@ else
 	var AS = "b00cjvxv";
 
 page.onConsoleMessage = function(msg) {
-//    if(msg.substring(0,1) === "[")
       console.log(msg);
 };
 
@@ -26,10 +25,7 @@ else
 	MString = "0" + Month;
 page.open(AS, function(status) {
     if ( status === "success" ) {
-        //console.log(status);
-        //page.includeJs("http://localhost/jquery.min.js", function() {
             page.evaluate(function() {
-                //console.log("boop");
 		var TNames = document.querySelectorAll(".summary a");
 		var L = TNames.length;
 		var A = [];
@@ -40,7 +36,6 @@ page.open(AS, function(status) {
                 console.log(JSON.stringify(A));
             });
             phantom.exit();
-        //});
     }
 });
 
